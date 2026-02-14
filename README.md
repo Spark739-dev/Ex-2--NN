@@ -1,6 +1,6 @@
-<H3>Name:VESHWANTH .</H3>
-<H3>212224230300</H3>
-<H3>Date:14-02-2026</H3>
+<H3>Name: VESHWANTH .</H3>
+<H3>Register No: 212224230300</H3>
+<H3>Date: 14-02-2026</H3>
 <H3>Experiment No. 2 </H3>
 ## Implementation of Perceptron for Binary Classification
 # AIM:
@@ -59,7 +59,7 @@ STEP 11:Print the accuracy<BR>
     class perceptron:
         def __init__(self,learning_rate=0.1):
             
-            self.learning_rate=self.learning_rate
+            self.learning_rate=learning_rate
             self._b=0.0
             self._w=None
             self.misclassified_samples=[]
@@ -77,7 +77,7 @@ STEP 11:Print the accuracy<BR>
                     self._w+=update*xi
                     errors+=int(update!=0.0)
                 self.misclassified_samples.append(errors)
-        def f(x:np.array)-> float:
+        def f(self,x:np.array)-> float:
             return np.dot(x,self._w) + self._b
         
         def predict(self,x:np.array):
@@ -116,7 +116,7 @@ STEP 11:Print the accuracy<BR>
     
     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3,random_state=0)
     
-    classifier = Perceptron(learning_rate=0.01)
+    classifier = perceptron(learning_rate=0.01)
     classifier.fit(x_train,y_train)
     
     print("Accuracy:", accuracy_score(classifier.predict(x_test), y_test) * 100)
@@ -126,10 +126,13 @@ STEP 11:Print the accuracy<BR>
     plt.xlabel('Epoch')
     plt.ylabel('Errors')
     plt.show()
-
 # OUTPUT:
 
-    <img width="1360" height="537" alt="image" src="https://github.com/user-attachments/assets/adb7ac07-a660-4656-a482-fa5b25d0df30" />
+   <img width="1360" height="537" alt="image" src="https://github.com/user-attachments/assets/adb7ac07-a660-4656-a482-fa5b25d0df30" />
+
+   <img width="1394" height="714" alt="image" src="https://github.com/user-attachments/assets/f0a4111a-d86c-4663-96bb-21b9c75e35dd" />
+
+   <img width="1380" height="543" alt="image" src="https://github.com/user-attachments/assets/2942a95e-ee58-4e96-b0ba-a97c1b135ed3" />
 
 
 # RESULT:
